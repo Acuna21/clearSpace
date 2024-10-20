@@ -2,7 +2,7 @@
 
 .navbar {
     background-color: #fff;
-    padding: 0 2rem;
+    padding: 0 10px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -14,7 +14,7 @@
         display: flex;
 
         img{
-            width: 70px;
+            width: 170px;
             cursor: pointer;
         }
     }
@@ -34,6 +34,7 @@
 }
 
 .desplegable-movil{
+    background-color: #fff;
     display: none;
     position: absolute; 
     top: auto; /* Coloca el menú justo debajo de la barra de navegación */
@@ -42,7 +43,7 @@
     border-radius: 0 0 4px 4px;
     box-shadow: 0 2px 4px #0003;
     padding: 0px 10px;
-    z-index: 100; 
+    z-index:2; 
     margin-top: 10px;
     
     li{
@@ -76,12 +77,6 @@
 @media (min-width: 768px) {
     .navbar {
         padding: 10px 30px; 
-
-        .navbar-icon{
-            img{
-                width: 120px;
-            }
-        }
     }
 
     .desplegable-movil{
@@ -111,14 +106,8 @@
 /* Para pantallas de escritorio más grandes */
 @media (min-width: 1024px) {
     .navbar {
+        padding: 0 2rem;
         padding: 10px 30px 0 30px; 
-
-        .navbar-icon {
-            img{
-                width: 120px;
-            }
-        }
-
         .menu{
             .toggle-menu{
                 display: none;

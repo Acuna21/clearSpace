@@ -30,7 +30,9 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "src/assets/styles/color.scss",
+              "src/assets/styles/btn.scss"
             ],
             "scripts": []
           },
@@ -100,5 +102,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "b78a4bd9-8e6a-4fed-abd9-74d757bc0707"
   }
 }

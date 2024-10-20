@@ -1,1 +1,28 @@
-<p>navbar works!</p>
+<nav class="navbar">
+    <div class="navbar-icon">
+        <img src="./../../../../assets/images/logo.png" alt="">
+    </div>
+
+    <ul class="menu">
+        <!-- movil o tablet -->
+        <li class="toggle-menu" (click)="toggleMenu()"><i class="fa-solid fa-bars"></i></li>
+
+        <!-- computador -->
+        <li (click)="toggleMenu()" class="desktop-menu">
+            Sobre nosotros
+            <i class="fa-solid fa-angle-down"></i>
+        </li>
+    </ul>
+</nav>
+
+<ul class="desplegable-movil" [ngClass]="{'open-desplegable-movil': isMenuOpen}">
+    <li>
+        <a href="" class="option">Sobre Clear Space</a>
+        <p class="description">Conoce nuestra misión y valores</p>
+    </li>
+    
+    <li>
+        <a>Nuestra historia</a>
+        <p class="description">Conoce nuestra historia</p>
+    </li>
+</ul>

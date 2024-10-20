@@ -1,0 +1,142 @@
+@import "./../../../../assets/styles/color.scss";
+
+.navbar {
+    background-color: #fff;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    position: sticky;
+    box-shadow: 0px 2px 4px 0 var(--color-shadow-navbar);
+
+    .navbar-icon {
+        display: flex;
+
+        img{
+            width: 70px;
+            cursor: pointer;
+        }
+    }
+
+    .menu {
+        margin: 0;
+
+        .toggle-menu{
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        .desktop-menu{
+            display: none;
+        }
+    }
+}
+
+.desplegable-movil{
+    display: none;
+    position: absolute; 
+    top: auto; /* Coloca el menú justo debajo de la barra de navegación */
+    left: 0;
+    right: 0;
+    border-radius: 0 0 4px 4px;
+    box-shadow: 0 2px 4px #0003;
+    padding: 0px 10px;
+    z-index: 100; 
+    margin-top: 10px;
+    
+    li{
+        margin-bottom: 17px;
+
+        a{
+            color: var(--color-font);
+            margin: 0; 
+            text-decoration: none;
+            padding-bottom: 4px;
+            font-size: 16px;
+
+            &:hover{
+                text-decoration: underline;
+            }
+        }
+    
+        .description{
+            margin:0;
+            padding: 0;
+        }
+    }
+
+}
+
+.open-desplegable-movil{
+    display: block;
+}
+
+
+@media (min-width: 768px) {
+    .navbar {
+        padding: 10px 30px; 
+
+        .navbar-icon{
+            img{
+                width: 120px;
+            }
+        }
+    }
+
+    .desplegable-movil{
+        padding: 0 30px;
+        
+    
+        li{
+            margin-bottom: 17px;
+            a{
+                color: var(--color-font);
+                margin: 0; 
+                text-decoration: none;
+                padding-bottom: 4px;
+                font-size: 22px;
+            }
+        
+            .description{
+                margin:0;
+                padding: 0;
+                font-size: 19px;
+            }
+        }
+    
+    }
+}
+
+/* Para pantallas de escritorio más grandes */
+@media (min-width: 1024px) {
+    .navbar {
+        padding: 10px 30px 0 30px; 
+
+        .navbar-icon {
+            img{
+                width: 120px;
+            }
+        }
+
+        .menu{
+            .toggle-menu{
+                display: none;
+            }
+    
+            .desktop-menu{
+                display: block;
+                cursor: pointer;
+                color:var(--color-font);
+                font-size: 18px;
+            }
+        }
+    }
+
+    .desplegable-movil{
+        width: 420px;
+        padding-top: 15px;
+        left: auto; 
+        margin-top: 0px;
+    }
+}

@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { CreateAccountComponent } from './page/create-account/create-account.component';
-import { LoginComponent } from './page/login/login.component';
-import { AboutComponent } from './page/about/about.component';
-import { ManageIncidentsComponent } from './page/manage-incidents/manage-incidents.component';
+import { CreateAccountComponent } from '@pages/create-account/create-account.component';
+import { LoginComponent } from '@pages/login/login.component';
+import { AboutComponent } from '@pages/about/about.component';
+import { ManageIncidentsComponent } from '@pages/manage-incidents/manage-incidents.component';
 import { loggedInGuard } from './shared/guards/logged-in.guard';
 
 const routes: Routes = [

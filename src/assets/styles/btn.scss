@@ -122,7 +122,7 @@
 
 .small {
     @extend %btn;
-    padding: 5px 15px;
+    padding: 10px 15px;
     font-weight: 600;
     font-size:clamp(14px, 2vw, 16px);
 }

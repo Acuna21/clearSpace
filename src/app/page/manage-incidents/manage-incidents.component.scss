@@ -1,0 +1,113 @@
+main{
+    min-height: calc(100vh - (71.64px + 300px));
+    padding: 10px 2rem;
+
+    .menu{
+        display: flex;
+        justify-content: space-between;
+        text-align: center;
+        align-items: center;
+
+        .option{
+            display: flex;
+            align-items: center;
+            text-align: center;
+            gap: 65px;
+
+            .icon{
+                display: flex;
+                gap: 10px;
+            }
+
+            i{
+                font-size: 20px;
+                color: var(--color-font);
+            }
+    
+            img{
+                border-radius: 50%;
+                width: 60px;
+            }
+        }
+    }
+
+    .container-column{
+        display: flex;
+    }
+
+    .left{
+        display: flex;
+        flex-direction: column;
+        width: 20%;
+        gap: 0px;
+
+        button{
+            padding: 15px 10px;
+            i{
+                margin-right: 10px;
+            }
+        }
+
+        // button{
+        //     padding: 0 10px;
+        //     border: 1px solid var(--color-border);
+        //     background-color: transparent;
+        // }
+    }
+
+    
+    .rigth{
+        width: 70%;
+        padding: 0 10px;
+        .user{
+            display: flex;
+            img{
+                width: 50px;
+                border-radius: 50%;
+            }
+
+            textarea{
+                border: 1px solid var(--color-border);
+                padding: 10px;
+                width: 98%;
+                color: var(--color-font);
+                border-radius: 4PX;
+            }
+        }
+
+        .publish-incidents{
+            padding: 15px 20px;
+            border-radius: 6px;
+            border: 1px solid var( --color-border);
+        }
+
+        .container-btn{
+            display: flex;
+            justify-content: space-between;
+            margin-top: 1rem;
+        
+
+            .btns-option{
+                display: flex;
+                gap: 20px;
+
+                button{
+                    padding: 0 10px;
+                }
+
+                i{
+                    margin-right: 5px;
+                }
+
+            }
+
+
+        }
+
+       
+
+
+            
+    
+    }
+}

@@ -9,17 +9,17 @@
             <div class="form-group">
                 <label class="input-container">
                     <i class="fa-solid fa-user"></i>
-                    <input type="email" placeholder="Usuario" required>
+                    <input type="email" placeholder="email">
                 </label>
                 
                 <div class="input-container">
                     <i class="fa-solid fa-lock"></i>
-                    <input type="password" placeholder="Contraseña" required>
+                    <input type="password" placeholder="Contraseña">
                 </div>
             </div>
 
             <div class="submit-btn">
-                <button type="submit" class="blue medium">Iniciar sesión</button>
+                <button (click)="login()" type="submit" class="blue medium">Iniciar sesión</button>
             </div>
         </form>
 

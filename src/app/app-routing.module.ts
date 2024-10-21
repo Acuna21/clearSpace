@@ -1,12 +1,19 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CreateAccountComponent } from './page/create-account/create-account.component';
+import { LoginComponent } from './page/login/login.component';
+import { AboutComponent } from './page/about/about.component';
+import { ManageIncidentsComponent } from './page/manage-incidents/manage-incidents.component';
+import { loggedInGuard } from './shared/guards/logged-in.guard';
 
 const routes: Routes = [
   // { path: 'tasks', component: ''},  // Ruta para la lista de tareas
   { path: 'create-account', component: CreateAccountComponent },  // Ruta para crear una tarea
-  { path: '', redirectTo: '/tasks', pathMatch: 'full' },  // Redirige a la lista de tareas por defecto
-  { path: '**', redirectTo: '/tasks' }  // Cualquier ruta no definida redirige a la lista de tareas
+  { path: 'login', component: LoginComponent },  // Ruta para crear una tarea
+  { path: 'about', component: AboutComponent },  // Ruta para crear una 
+  { path: 'incidents', component: ManageIncidentsComponent, canActivate: [loggedInGuard] },  // Ruta para crear una tarea
+  { path: '', redirectTo: '/login', pathMatch: 'full' },  // Redirige a la lista de tareas por defecto
+  { path: '**', redirectTo: '/login' }  // Cualquier ruta no definida redirige a la lista de tareas
 ];
 
 @NgModule({

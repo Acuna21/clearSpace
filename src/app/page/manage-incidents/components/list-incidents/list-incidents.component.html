@@ -1,0 +1,23 @@
+<ul class="container-incidents">
+        <li *ngFor="let incident of incidents" class="list-incidents">
+        <div class="user">
+            <div class="name">
+            <img src="https://img.freepik.com/free-vector/blue-circle-with-white-user_78370-4707.jpg" alt="">
+            <span>{{ incident.userName }}</span>
+            </div>
+            <div>
+            <p class="state">{{ incident.state }}</p>
+            </div>
+        </div>
+    
+        <div class="incidents">
+            <p class="location">{{ incident.location }}
+            <i class="fa-solid fa-location-dot"></i>
+            </p>
+            <div class="description">
+            <img [src]="incident.imageUrl" alt="">
+            <p>{{ incident.description }}</p>
+            </div>
+        </div>
+        </li>
+</ul>

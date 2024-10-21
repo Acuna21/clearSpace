@@ -25,10 +25,9 @@ main{
         form{
             
             .form-group {
-                display: flex;
-                gap: 10px;
-                margin-bottom: 20px;
-                align-items: center;
+                display: grid;
+                gap: .7rem;
+                margin-bottom: 1rem;
             
                 select {
                     width: 100%;
@@ -51,6 +50,7 @@ main{
                     width: 100%;
                     border: 1px solid #ccc;
                     border-radius: 4px;
+                    overflow: hidden;
             
                     i {
                         position: absolute;
@@ -93,6 +93,13 @@ main{
     
             .logo{
                 display: block;
+            }
+
+            form{
+
+                .form-group{
+                    grid-template-columns: repeat(2, 1fr);
+                }
             }
         }
     }

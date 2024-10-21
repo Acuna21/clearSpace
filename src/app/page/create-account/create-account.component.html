@@ -1,1 +1,61 @@
-<p>create-account works!</p>
+<main>
+    <div class="form-container">
+        <div class="logo"><img src="./../../../assets/images/logo-version2.png" alt="Avatar" ></div>
+        <h2>Crear cuenta</h2>
+    
+        <form>
+            <div class="form-group">
+                <div class="input-container">
+                    <i class="fa-solid fa-user"></i>
+                    <input type="password" placeholder="Nombre" required>
+                </div>
+                
+                <div class="input-container">
+                    <i class="fa-solid fa-envelope"></i>
+                    <input type="password" placeholder="E-mail" required>
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <select required>
+                    <option value="" disabled selected>Tipo de documento</option>
+                    <option value="CC">Cédula de Ciudadanía</option>
+                    <option value="TI">Tarjeta de Identidad</option>
+                </select>
+                <div class="input-container">
+                    <i class="fa-solid fa-envelope"></i>
+                    <input type="password" placeholder="Num. Identificacion" required>
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <div class="input-container">
+                    <i class="fa-solid fa-phone"></i>
+                    <input type="password" placeholder="Celular" required>
+                </div>
+                <select required>
+                    <option value="" disabled selected>Género</option>
+                    <option value="M">Masculino</option>
+                    <option value="F">Femenino</option>
+                    <option value="O">Otro</option>
+                </select>
+            </div>
+    
+            <div class="form-group">
+                <div class="input-container">
+                    <i class="fa-solid fa-lock"></i>
+                    <input type="password" placeholder="Contraseña" required>
+                </div>
+    
+                <div class="input-container">
+                    <i class="fa-solid fa-lock"></i>
+                    <input type="password" placeholder="Confirmar contraseña" required>
+                </div>
+            </div>
+            
+            <div class="submit-btn">
+                <button type="submit" class="blue medium">Crear cuenta</button>
+            </div>
+        </form>
+    </div>
+</main>

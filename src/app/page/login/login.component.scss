@@ -1,0 +1,136 @@
+main{
+    height: calc(100vh - (71.64px + 300px));
+    display: flex;
+    align-items: center;
+    
+
+    .container {
+        margin: 0 auto;
+        background-color: white;
+        padding: 15px 30px 3% 30px;
+        text-align: center;
+
+        h2{
+            margin-bottom: 15px;
+            color:var(--color-font)
+        }
+
+
+        .logo{
+            display: none;
+            img{
+                width: 100px;  
+            }
+        }
+
+        form{
+            .form-group {
+                display: grid;
+                gap: .7rem;
+                margin-bottom: 1rem;
+
+                .input-container {
+                    position: relative;
+                    width: 100%;
+                    border: 1px solid #ccc;
+                    border-radius: 4px;
+                    overflow: hidden;
+            
+                    i {
+                        position: absolute;
+                        left: 10px;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        color: var(--color-font);
+                    }
+            
+                    input {
+                        padding: 10px 10px 10px 35px; /* Espacio para el ícono */
+                        box-sizing: border-box;
+                        border: 0;
+                        width: 100%;
+                    }
+                }
+
+            }
+        }
+
+        .submit-btn {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+        
+            button{
+                width: 100%;
+            }
+        }
+
+        .option{
+            display: flex;
+            gap: 25px;
+            margin-top: 1rem;
+            
+            p{
+                margin: 0;
+                font-size: 16px;
+                color:var(--color-gray);
+            }
+
+            a{
+                color:var(--color-gray);
+                text-decoration: none;
+                margin-top: 5px;
+                font-size: 15px;
+
+            }
+        }
+    }
+}
+
+
+
+@media (min-width: 1024px) {
+    main{
+        .container {
+            padding: 28px 30px 48px 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+           
+    
+            .logo{
+                display: block;
+                img{
+                    width: 120px;
+                }
+            }
+
+            form{
+                .form-group{
+                    .input-container {
+                        input{
+                            padding: 15px 30px;
+                        }
+                    }
+                }
+            }
+
+            .option{
+                margin-top: 1.5rem;
+                
+                p{
+                    font-size: 16px;
+                }
+    
+                a{
+                    font-size: 16px;
+    
+                    &:hover{
+                        color:var(--color-font);
+                        text-decoration:underline;
+                    }
+                }
+            }
+        }
+    }
+}
+

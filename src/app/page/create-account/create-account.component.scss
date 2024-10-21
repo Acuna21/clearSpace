@@ -80,6 +80,17 @@ main{
                 }
             }
         }
+
+        .message{
+            margin-top: 1rem;
+
+            a{
+                color:var(--color-gray);
+                text-decoration: none;
+                margin-top: 5px;
+                font-size: 15px; 
+            }
+        }
     
     }
 }
@@ -99,6 +110,17 @@ main{
 
                 .form-group{
                     grid-template-columns: repeat(2, 1fr);
+                }
+            }
+
+            .message{
+                margin-top: 1.5rem;
+    
+                a{
+                    &:hover{
+                        color:var(--color-font);
+                        text-decoration:underline;
+                    }
                 }
             }
         }

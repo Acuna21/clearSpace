@@ -1,19 +1,52 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { CreateAccountComponent } from '@pages/create-account/create-account.component';
+import { loggedInGuard } from './shared/guards/logged-in.guard';
 import { LoginComponent } from '@pages/login/login.component';
 import { AboutComponent } from '@pages/about/about.component';
 import { ManageIncidentsComponent } from '@pages/manage-incidents/manage-incidents.component';
-import { loggedInGuard } from './shared/guards/logged-in.guard';
+import { MyReportsComponent } from '@pages/my-reports/my-reports.component';
+import { AddEntityComponent } from '@pages/add-entity/add-entity.component';
+import { CitizenIncidentsComponent } from '@pages/citizen-incidents/citizen-incidents.component';
 
 const routes: Routes = [
-  // { path: 'tasks', component: ''},  // Ruta para la lista de tareas
-  { path: 'create-account', component: CreateAccountComponent },  // Ruta para crear una tarea
-  { path: 'login', component: LoginComponent },  // Ruta para crear una tarea
-  { path: 'about', component: AboutComponent },  // Ruta para crear una 
-  { path: 'incidents', component: ManageIncidentsComponent, canActivate: [loggedInGuard] },  // Ruta para crear una tarea
-  { path: '', redirectTo: '/login', pathMatch: 'full' },  // Redirige a la lista de tareas por defecto
-  { path: '**', redirectTo: '/login' }  // Cualquier ruta no definida redirige a la lista de tareas
+
+  { 
+    path: 'create-account', 
+    loadComponent: () => import('@pages/create-account/create-account.component').then( c => c.CreateAccountComponent ),
+    canActivate: []
+  },
+  { 
+    path: 'login', 
+    component: LoginComponent,
+    canActivate: []
+  },
+  { 
+    path: 'about',
+    component: AboutComponent,
+    canActivate: []
+  },
+  { 
+    path: 'incidents', 
+    component: ManageIncidentsComponent, 
+    canActivate: [loggedInGuard] },
+  { 
+    path: 'my-reports', 
+    component:MyReportsComponent,
+    canActivate: [loggedInGuard],
+  },
+  {
+    path: 'add-entity',
+    component:AddEntityComponent,
+    canActivate: [loggedInGuard],
+  },
+  {
+    path: 'citizen-incidents',
+    component: CitizenIncidentsComponent,
+    canActivate: [loggedInGuard]
+  },
+
+  { path: '', redirectTo: '/login', pathMatch: 'full' },
+  { path: '**', redirectTo: '/login' }
 ];
 
 @NgModule({

@@ -5,21 +5,24 @@
         </div>
         <h2>Iniciar sesión</h2>
 
-        <form>
+        <form [formGroup]="loginForm">
             <div class="form-group">
                 <label class="input-container">
                     <i class="fa-solid fa-user"></i>
-                    <input type="email" placeholder="email">
+                    <input
+                        formControlName="email" type="email" placeholder="email"
+                    >
                 </label>
                 
-                <div class="input-container">
+                <label class="input-container">
                     <i class="fa-solid fa-lock"></i>
-                    <input type="password" placeholder="Contraseña">
-                </div>
+                    <input
+                        formControlName="password" type="password" placeholder="Contraseña">
+                </label>
             </div>
 
             <div class="submit-btn">
-                <button (click)="login()" type="submit" class="blue medium">Iniciar sesión</button>
+                <button (click)="login()" type="button" class="blue medium">Iniciar sesión</button>
             </div>
         </form>
 

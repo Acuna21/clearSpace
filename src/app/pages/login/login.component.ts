@@ -1,6 +1,7 @@
 import { Component, inject } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { LocalStorage } from 'src/app/shared/utils/local-storage';
+import { AuthService } from '@services/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -10,10 +11,27 @@ import { LocalStorage } from 'src/app/shared/utils/local-storage';
 export class LoginComponent {
 
   router = inject(Router);
+  authService = inject(AuthService);
+
+  loginForm : FormGroup = new FormGroup({
+    email: new FormControl(null, [Validators.required, Validators.email]),
+    password: new FormControl(null, [Validators.required])
+  });
+
+  get email(): FormControl {
+    return this.loginForm.get('email') as FormControl;
+  }
+  get password(): FormControl {
+    return this.loginForm.get('password') as FormControl;
+  }
 
   login(){
-    LocalStorage.setItem('isLogged', true);
-    this.router.navigate(['/incidents']);
+    if (!this.loginForm.valid) {
+      console.log('R')
+      return
+    }
+    console.log('L')
+    this.authService.login(this.email.value, this.password.value);
   }
 
 }

@@ -7,18 +7,22 @@ import { ManageIncidentsComponent } from '@pages/manage-incidents/manage-inciden
 import { MyReportsComponent } from '@pages/my-reports/my-reports.component';
 import { AddEntityComponent } from '@pages/add-entity/add-entity.component';
 import { CitizenIncidentsComponent } from '@pages/citizen-incidents/citizen-incidents.component';
+import { publicGuard } from '@guards/public.guard';
+import { CreateAccountComponent } from '@pages/create-account/create-account.component';
+import { rolesGuard } from '@guards/roles.guard';
+import { Roles } from '@utils/enums';
 
 const routes: Routes = [
 
   { 
     path: 'create-account', 
-    loadComponent: () => import('@pages/create-account/create-account.component').then( c => c.CreateAccountComponent ),
-    canActivate: []
+    component: CreateAccountComponent,
+    canActivate: [publicGuard]
   },
   { 
     path: 'login', 
     component: LoginComponent,
-    canActivate: []
+    canActivate: [publicGuard]
   },
   { 
     path: 'about',
@@ -28,21 +32,26 @@ const routes: Routes = [
   { 
     path: 'incidents', 
     component: ManageIncidentsComponent, 
-    canActivate: [loggedInGuard] },
+    canActivate: [loggedInGuard, rolesGuard],
+    data: { roles: [Roles.admin, Roles.citizen] }
+  },
   { 
     path: 'my-reports', 
     component:MyReportsComponent,
-    canActivate: [loggedInGuard],
+    canActivate: [loggedInGuard, rolesGuard],
+    data: { roles: [Roles.citizen] }
   },
   {
     path: 'add-entity',
     component:AddEntityComponent,
     canActivate: [loggedInGuard],
+    data: { roles: [Roles.admin] }
   },
   {
     path: 'citizen-incidents',
     component: CitizenIncidentsComponent,
-    canActivate: [loggedInGuard]
+    canActivate: [loggedInGuard],
+    data: { roles: [Roles.admin, Roles.operative, Roles.governmental] }
   },
 
   { path: '', redirectTo: '/login', pathMatch: 'full' },

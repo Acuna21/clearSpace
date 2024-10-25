@@ -27,7 +27,7 @@ import { CitizenIncidentsComponent } from './pages/citizen-incidents/citizen-inc
     ListIncidentsComponent,
     MyReportsComponent,
     AddEntityComponent,
-    CitizenIncidentsComponent
+    CitizenIncidentsComponent,
   ],
   imports: [
     BrowserModule,

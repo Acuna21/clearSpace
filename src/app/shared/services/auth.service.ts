@@ -16,6 +16,15 @@ export class AuthService {
 
   constructor() { }
 
+  isLoggin():boolean {
+    return !!this.userLogin();
+  }
+
+  userLogin():User | null {
+    const user = LocalStorage.getItem<User>('user', true);
+    return user || null;
+  }
+
   login(email: string, password: string): ServiceResponse<User>{
     const error = { message: 'Credenciales invalidas', code: 'INVALID_CREDENTIALS' }
     const account = accounts.find( account => account.email === email);

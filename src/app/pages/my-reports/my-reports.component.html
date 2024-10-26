@@ -1,1 +1,51 @@
-<p>my-reports works!</p>
+<main>
+    <div class="menu">
+        <div class="search">
+            <input type="text" placeholder="Buscar">
+        </div>
+        <div class="option">
+            <div class="icon">
+                <i class="fa-solid fa-comment"></i>
+                <i class="fa-solid fa-bell"></i>
+            </div>
+            <img src="https://img.freepik.com/free-vector/blue-circle-with-white-user_78370-4707.jpg" alt="">
+        </div>
+    </div>
+
+    <div class="container-column">
+        <div class="left">
+            <button class="medium transparent"><i class="fa-brands fa-wpforms"></i> Incidencias</button>
+            <button class="medium transparent"><i class="fa-solid fa-clipboard"></i> Mi historial</button>
+        </div>
+
+        <section class="right">
+            <div class="header-section">
+                <h1>Historial de mis reportes</h1>
+                <div class="filter">
+                    <label for="filter">Filtrar por:</label>
+                    <select id="filter">
+                        <option value="">Todos</option>
+                        <option value="pendiente">Pendiente</option>
+                        <option value="en-proceso">En proceso</option>
+                        <option value="completado">Completado</option>
+                    </select>
+                </div>
+            </div>
+            <ul class="reports-list">
+                <li *ngFor="let report of reportsList; let i = index" class="report-item">
+                    <div class="details-section">
+                        <strong>{{ report.userName }}</strong>
+                        <p>{{ report.description }}</p>
+                        <span class="date"> {{getUniqueDate(i)}}</span>
+                        
+
+                    </div>
+                    <button class="state"> Estado</button>
+                    <div class="location">
+                        <i class="fa-solid fa-location-dot fa-2x"></i>
+                    </div>
+                </li>
+            </ul>            
+        </section>
+    </div>
+</main>

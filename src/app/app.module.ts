@@ -14,6 +14,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MyReportsComponent } from './pages/my-reports/my-reports.component';
 import { AddEntityComponent } from './pages/add-entity/add-entity.component';
 import { CitizenIncidentsComponent } from './pages/citizen-incidents/citizen-incidents.component';
+import { HeaderComponent } from './shared/components/header/header.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { CitizenIncidentsComponent } from './pages/citizen-incidents/citizen-inc
     MyReportsComponent,
     AddEntityComponent,
     CitizenIncidentsComponent,
+    HeaderComponent,
   ],
   imports: [
     BrowserModule,

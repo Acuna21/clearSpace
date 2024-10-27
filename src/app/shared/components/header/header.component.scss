@@ -50,7 +50,7 @@ header{
                 left: 0;
                 right: 0;
                 border-radius: 0 0 4px 4px;
-                box-shadow: 0 2px 4px #0003;
+                box-shadow: 0 0 4px #0003;
                 padding: 0px 10px;
                 z-index:2;
                 
@@ -112,22 +112,20 @@ header{
 
                 .desplegable-movil{
                     padding: 0 30px;
+                    width: 420px;
+                    padding-top: 15px;
+                    left: auto;
+                    right: 30px;
+                    margin-top: 0px;
                     
                     li{
                         margin-bottom: 17px;
                         a{
-                            color: var(--color-font);
-                            margin: 0; 
                             text-decoration: none;
                             padding-bottom: 4px;
-                            font-size: 22px;
+                            font-weight: bold;
                         }
                     
-                        .description{
-                            margin:0;
-                            padding: 0;
-                            font-size: 19px;
-                        }
                     }
                 
                 }

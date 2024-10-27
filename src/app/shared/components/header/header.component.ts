@@ -11,13 +11,18 @@ export class HeaderComponent {
   isMenuOpen = false; 
   
   authService = inject(AuthService);
+
   userActive = computed<string | null>(() => {
     const email = this.authService.userLogin()?.email;
     return email?.split('@')[0] || null;
   });
 
-
   toggleMenu(){
     this.isMenuOpen = !this.isMenuOpen;
   }
+
+  logout(){
+    this.authService.logout();
+  }
+  
 }

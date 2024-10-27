@@ -1,51 +1,12 @@
-.menu {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-    background-color: #fff;
-    box-shadow: 0px 2px 5px rgba(0,0,0,0.1);
+.my-reports-container {
+    width: 80%;
+    padding: 20px;
+    margin: 0 auto;
 }
 
-.menu .search input {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    width: 300px;
-}
-
-.menu .option .icon {
-    display: flex;
-    gap: 15px;
-}
-
-.menu .option img {
-    width: 40px;
-    border-radius: 50%;
-}
-
-.left {
-    width: 20%;
-    padding: 15px;
-    display: flex;
-    flex-direction: column;
-    background-color: white; 
-    gap: 0px; 
-    border-right: 2px solid rgba(0, 0, 0, 0.1)
-}
-
-.left button {
-    width: 100%;
-    padding: 15px 10px;
-    text-align: left; 
-    background-color: transparent;
-    border-color: opacity($color: #000000)  ;
-    font-size: 1.2rem;
-    display: flex;
-    
-    align-items: center;
-    gap: 10px; 
-    margin-right: 10px;
+.my-reports-container h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
 }
 
 .report .details {
@@ -83,16 +44,6 @@
     display: flex;
 }
 
-.right {
-    width: 80%;
-    padding: 20px;
-   
-}
-
-.right h1 {
-    font-size: 2rem;
-    margin-bottom: 20px;
-}
 
 .filter {
     margin-bottom: 20px;

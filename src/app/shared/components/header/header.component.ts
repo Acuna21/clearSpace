@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, computed, inject } from '@angular/core';
+import { AuthService } from '@services/auth.service';
 
 @Component({
   selector: 'app-header',
@@ -7,4 +8,16 @@ import { Component } from '@angular/core';
 })
 export class HeaderComponent {
 
+  isMenuOpen = false; 
+  
+  authService = inject(AuthService);
+  userActive = computed<string | null>(() => {
+    const email = this.authService.userLogin()?.email;
+    return email?.split('@')[0] || null;
+  });
+
+
+  toggleMenu(){
+    this.isMenuOpen = !this.isMenuOpen;
+  }
 }

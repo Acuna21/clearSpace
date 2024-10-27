@@ -1,58 +1,31 @@
-<main>
-    <div class="menu">
-
-        <div class="search">busca</div>
-
-        <div class="option">
-            <div class="icon">
-                <i class="fa-solid fa-comment"></i>
-                <i class="fa-solid fa-bell"></i>
-            </div>
-
+<div class="incidents-container">
+    <div class="publish-incidents">
+        
+        <div class="user">
             <img src="https://img.freepik.com/free-vector/blue-circle-with-white-user_78370-4707.jpg" alt="">
-
+            <textarea name="" id="" placeholder="¿Que incidencia esta ocurriendo?"></textarea>
         </div>
 
-    </div>
+        <div class="container-btn">
+            <div class="btns-option">
+                <button class="transparent">
+                    <i class="fa-solid fa-video"></i>
+                    <span>Videos</span>
+                </button>
+                <button class="transparent">
+                    <i class="fa-solid fa-image"></i>
+                    <span>Fotos</span>
+                </button>
 
-    <div class="container-column">
-        <div class="left">
-            <button class="medium transparent"><i class="fa-brands fa-wpforms"></i>Incidencias</button>
-            <button class="medium transparent"><i class="fa-solid fa-clipboard"></i>Mi historial</button>
-        </div>
-
-        <div class="rigth">
-            <div class="publish-incidents">
-                
-                <div class="user">
-                    <img src="https://img.freepik.com/free-vector/blue-circle-with-white-user_78370-4707.jpg" alt="">
-                    <textarea name="" id="" placeholder="¿Que incidencia esta ocurriendo?"></textarea>
-                </div>
-
-                <div class="container-btn">
-                    <div class="btns-option">
-                        <button class="transparent">
-                            <i class="fa-solid fa-video"></i>
-                            <span>Videos</span>
-                        </button>
-                        <button class="transparent">
-                            <i class="fa-solid fa-image"></i>
-                            <span>Fotos</span>
-                        </button>
-    
-                        <button class="transparent">
-                            <i class="fa-solid fa-location-dot"></i>
-                            <span>Ubicacion</span>
-                        </button>
-                    </div>
-
-                    <button class="small blue">Publicar</button>
-                </div>
+                <button class="transparent">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <span>Ubicacion</span>
+                </button>
             </div>
 
-            <app-list-incidents [incidents]="incidentList"></app-list-incidents>
+            <button class="small blue">Publicar</button>
         </div>
     </div>
 
-
-</main>
+    <app-list-incidents [incidents]="incidentList"></app-list-incidents>
+</div>

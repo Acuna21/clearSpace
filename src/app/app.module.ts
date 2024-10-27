@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from '@components/navbar/navbar.component';
@@ -15,6 +14,8 @@ import { MyReportsComponent } from './pages/my-reports/my-reports.component';
 import { AddEntityComponent } from './pages/add-entity/add-entity.component';
 import { CitizenIncidentsComponent } from './pages/citizen-incidents/citizen-incidents.component';
 import { HeaderComponent } from './shared/components/header/header.component';
+import { ModalComponent } from './pages/citizen-incidents/modal/modal.component';
+
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { HeaderComponent } from './shared/components/header/header.component';
     AddEntityComponent,
     CitizenIncidentsComponent,
     HeaderComponent,
+    ModalComponent,
   ],
   imports: [
     BrowserModule,

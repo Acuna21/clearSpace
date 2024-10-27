@@ -1,0 +1,259 @@
+.menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #fff;
+    box-shadow: 0px 2px 5px rgba(0,0,0,0.1);
+}
+
+.menu .search input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 300px;
+}
+
+.menu .option .icon {
+    display: flex;
+    gap: 15px;
+}
+
+.menu .option img {
+    width: 40px;
+    border-radius: 50%;
+}
+
+.container-column{
+    display: flex;
+    width: 100%;
+}
+
+.left {
+    width: 20%;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    background-color: white; 
+    gap: 0px; 
+    border-right: 2px solid rgba(0, 0, 0, 0.1)
+}
+
+.left button {
+    width: 100%;
+    padding: 15px 10px;
+    text-align: center;
+    background-color: transparent;
+    border-color: #fafafa;
+    color: #000;
+    border: 1px solid #ccc;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 10px; 
+    margin-right: 10px;
+}
+
+.report .details {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.report .details .date {
+    font-size: 0.9rem;
+    color: #999;
+}
+
+.report .status {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.report .status button {
+    background-color: #757575;
+    color: #fff;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+}
+
+.report .location {
+    font-size: 0.9rem;
+    color: #666;
+    align-items: flex-end;
+}
+
+.container-column {
+    display: flex;
+}
+
+.right {
+    width: 80%;
+    padding: 20px;
+   
+}
+
+.right h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.filter {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    
+}
+
+.filter select {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+
+.header-section{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    
+}
+
+.header-section h1 {
+    margin: 0;
+    font-size: 2rem;
+}
+
+.reports-list {
+    list-style: none;
+    padding: 0;
+}
+
+.report-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    padding: 10px;
+    border: 1px solid #ddd;
+    margin-bottom: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    border-radius: 15px;
+
+    &:hover{
+        box-shadow: 0 6px 12px rgba(0,0,0, 0.5);
+    }
+}
+
+.state{
+    margin-top: 20px;
+    height: 50%;
+}
+
+.details-section {
+    max-width: 80%;
+}
+
+.location {
+    font-size: 1.5rem;
+    color: #3f3f3f;
+    padding-right: 20px;
+    padding: 50px;
+    border-left: solid black;
+}
+
+.date {
+    font-size: 0.9rem;
+    color: #999;
+    margin-top: 5px; 
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+  }
+  
+  .modal-content {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    width: 400px;
+    max-width: 90%;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .incident-date {
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .incident-description {
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  hr {
+    margin: 20px 0;
+    border: none;
+    border-top: 1px solid #ddd;
+  }
+  
+  .status-options {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+  }
+  
+  .status-option {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .status-option p {
+    margin: 0;
+    font-weight: bold;
+  }
+  
+  .status-option input[type="checkbox"] {
+    margin-top: 10px;
+    width: 20px;
+    height: 20px;
+    accent-color: #007bff;
+  }
+  
+  .status-option.active {
+    background-color: #e0e0e0;
+  }
+  
+  button {
+    background-color: #747474;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: opacity($color: #000000);
+  }
+  

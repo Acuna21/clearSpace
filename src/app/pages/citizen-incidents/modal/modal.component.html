@@ -1,0 +1,18 @@
+<div class="modal-backdrop" *ngIf="isOpen">
+  <div class="modal-content">
+    <h2>Actualizar Estado</h2>
+    <p>Seleccione el estado de la incidencia:</p>
+    <div class="status-options">
+      <label>
+        <input type="checkbox" /> Pendiente
+      </label>
+      <label>
+        <input type="checkbox" /> En Proceso
+      </label>
+      <label>
+        <input type="checkbox" /> Completado
+      </label>
+    </div>
+    <button (click)="closeModal()">Cerrar</button>
+  </div>
+</div>

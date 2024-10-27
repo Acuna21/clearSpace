@@ -1,4 +1,4 @@
-import { inject, Injectable } from '@angular/core';
+import { inject, Injectable, signal } from '@angular/core';
 import { Router } from '@angular/router';
 import { User } from '@models/accounts';
 import { ServiceResponse } from '@models/services-response';
@@ -11,18 +11,15 @@ import { RoleManagementService } from './role-management.service';
 })
 export class AuthService {
 
+  userActive = signal<User | null>(null);
+
   router = inject(Router);
   roleManagementService = inject(RoleManagementService);
 
   constructor() { }
 
   isLoggin():boolean {
-    return !!this.userLogin();
-  }
-
-  userLogin():User | null {
-    const user = LocalStorage.getItem<User>('user', true);
-    return user || null;
+    return !!this.userActive();
   }
 
   login(email: string, password: string): ServiceResponse<User>{
@@ -35,16 +32,22 @@ export class AuthService {
       email: account.email,
       role: account.role
     };
+    this.userActive.set(user);
     LocalStorage.setItem('user', user);
     const urlRedirect = this.roleManagementService.getRedirectUrl();
-    console.log('URL Redirect: ', urlRedirect)
     this.router.navigateByUrl(urlRedirect);
     return { data: user } as ServiceResponse<User>
   }
 
   logout(): void{
     LocalStorage.removeItem('user');
+    this.userActive.set(null);
     this.router.navigate(['/login']);
+  }
+
+  validateLogin():void{
+    const user = LocalStorage.getItem<User>('user', true);
+    if (user) this.userActive.set(user);
   }
 
   

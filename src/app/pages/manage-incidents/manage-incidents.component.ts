@@ -6,6 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./manage-incidents.component.scss']
 })
 export class ManageIncidentsComponent {
+
   incidentList = [
     {
       userName: 'Sara Acuña Benavides',

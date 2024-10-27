@@ -1,10 +1,12 @@
 <header>
     <div class="header-content">
-        <img src="./../../../../assets/images/logo.png" alt="">
+        <a href="login">
+            <img src="./../../../../assets/images/logo.png" alt="">
+        </a>
     
         <div class="menu">
 
-            <div class="icons">
+            <div *ngIf="userActive()" class="icons">
                 <i class="fa-solid fa-comment"></i>
                 <i class="fa-solid fa-bell"></i>
             </div>
@@ -30,8 +32,8 @@
                     <p class="description">Conoce nuestra historia</p>
                 </li>
 
-                <li>
-                    <a (click)="logout()">Cerrar Sesion</a>
+                <li *ngIf="authService.isLoggin()">
+                    <a href="login" (click)="logout()">Cerrar Sesion</a>
                 </li>
             </ul>
 

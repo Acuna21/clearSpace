@@ -1,4 +1,4 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, computed, inject, OnInit } from '@angular/core';
 import { AuthService } from '@services/auth.service';
 import { Roles } from '@utils/enums';
 
@@ -7,21 +7,18 @@ import { Roles } from '@utils/enums';
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.scss']
 })
-export class NavbarComponent implements OnInit {
+export class NavbarComponent {
 
   isMenuOpen = false;
   
   readonly roles = Roles;
-  myRole!:Roles;
+  myRole = computed(() => {
+    return this.authServie.userActive()?.role!;
+  })
 
   authServie = inject(AuthService);
 
-  ngOnInit(): void {
-    this.myRole = this.authServie.userLogin()?.role!;
-  }
-
   toggleMenu(){
-    console.log("aca")
     this.isMenuOpen = !this.isMenuOpen;
   }
 

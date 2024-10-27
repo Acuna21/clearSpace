@@ -1,4 +1,4 @@
-import { Component, computed, inject } from '@angular/core';
+import { Component, computed, inject, OnInit } from '@angular/core';
 import { AuthService } from '@services/auth.service';
 
 @Component({
@@ -6,14 +6,14 @@ import { AuthService } from '@services/auth.service';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
-export class HeaderComponent {
+export class HeaderComponent{
 
   isMenuOpen = false; 
   
   authService = inject(AuthService);
 
   userActive = computed<string | null>(() => {
-    const email = this.authService.userLogin()?.email;
+    const email = this.authService.userActive()?.email;
     return email?.split('@')[0] || null;
   });
 
@@ -24,5 +24,5 @@ export class HeaderComponent {
   logout(){
     this.authService.logout();
   }
-  
+
 }

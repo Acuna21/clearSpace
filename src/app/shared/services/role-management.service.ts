@@ -12,9 +12,7 @@ export class RoleManagementService {
 
   getRedirectUrl():string{
     const user = LocalStorage.getItem<User>('user', true);
-    console.log(user);
     const role = user.role;
-    console.log('Role: ', role);
     switch(role){
       case Roles.citizen:
       case Roles.admin:

@@ -1,24 +1,22 @@
 <nav>
     <ul>
-        <ng-container *ngIf="myRole === roles.citizen || myRole === roles.admin">
-            <li>
-                <a routerLink="/incidents" routerLinkActive="active">
-                    <i class="fa-brands fa-wpforms"></i>
-                    Incidencias
-                </a>
-            </li>
-            <li>
-                <a routerLink="/my-reports" routerLinkActive="active" >
-                    <i class="fa-solid fa-clipboard"></i>
-                    Mis reportes
-                </a>
-            </li>
-        </ng-container>
-        <ng-container *ngIf="myRole === roles.operative || myRole === roles.governmental">
+        <li *ngIf="myRole() === roles.citizen || myRole() === roles.admin">
+            <a routerLink="/incidents" routerLinkActive="active">
+                <i class="fa-brands fa-wpforms"></i>
+                Incidencias
+            </a>
+        </li>
+        <li>
+            <a *ngIf="myRole() === roles.citizen" routerLink="/my-reports" routerLinkActive="active" >
+                <i class="fa-solid fa-clipboard"></i>
+                Mis reportes
+            </a>
+        </li>
+        <ng-container *ngIf="myRole() === roles.operative || myRole() === roles.governmental">
             <li>
                 <a routerLink="/citizen-incidents" routerLinkActive="active">
                     <i class="fa-brands fa-wpforms"></i>
-                    Incidencias
+                    Incidencias recibidas
                 </a>
             </li>
         </ng-container>

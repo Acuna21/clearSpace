@@ -27,10 +27,8 @@ export class LoginComponent {
 
   login(){
     if (!this.loginForm.valid) {
-      console.log('R')
       return
     }
-    console.log('L')
     this.authService.login(this.email.value, this.password.value);
   }
 

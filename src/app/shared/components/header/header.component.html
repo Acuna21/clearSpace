@@ -1,0 +1,37 @@
+<header>
+    <div class="header-content">
+        <img src="./../../../../assets/images/logo.png" alt="">
+    
+        <div class="menu">
+
+            <div class="icons">
+                <i class="fa-solid fa-comment"></i>
+                <i class="fa-solid fa-bell"></i>
+            </div>
+            
+            <!-- movil o tablet -->
+            <div class="toggle-menu" (click)="toggleMenu()"><i class="fa-solid fa-bars"></i></div>
+    
+            <!-- computador -->
+            <div (click)="toggleMenu()" class="desktop-menu">
+                <span>{{ userActive() || 'Sobre nosotros'}}</span>
+                <img *ngIf="userActive()" src="https://img.freepik.com/free-vector/blue-circle-with-white-user_78370-4707.jpg" alt="">
+                <i class="fa-solid fa-angle-down"></i>
+            </div>
+
+            <ul class="desplegable-movil" [ngClass]="{'open-desplegable-movil': isMenuOpen}">
+                <li>
+                    <a href="about" class="option">Sobre Clear Space</a>
+                    <p class="description">Conoce nuestra misión y valores</p>
+                </li>
+                
+                <li>
+                    <a href="about">Nuestra historia</a>
+                    <p class="description">Conoce nuestra historia</p>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+    
+</header>
